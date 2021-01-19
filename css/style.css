@@ -1,0 +1,142 @@
+/* ----- VARIABLES ----- */
+:root {
+  --color-primary: hsl(185, 75%, 39%);
+  --color-dark: hsl(229, 23%, 23%);
+  --color-medium: hsl(227, 10%, 46%);
+  --color-light: hsl(0, 0%, 59%);
+}
+
+/* ----- RESET ----- */
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* ----- UTILITIES ----- */
+
+/* ----- GENERAL STYLING ----- */
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+  font-size: 18px;
+  height: 100vh;
+  background-color: var(--color-primary);
+  background-image: url('../images/bg-pattern-top.svg'), url('../images/bg-pattern-bottom.svg');
+  background-size: 100%;
+  background-position: right 50vw bottom calc(50vh + 25%), left 50vw top calc(50vh + 25%);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ----- MAIN STYLING ----- */
+.card {
+  max-width: 350px;
+  width: 100%;
+  max-height: 400px;
+  min-height: 400px;
+  height: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.background {
+  background-image: url('../images/beach.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 39%;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+}
+
+.avatar {
+  position: absolute;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  background: #e3e3e3;
+  height: 110px;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 50%);
+}
+
+.profile-details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 100%;
+  margin-top: 35px;
+}
+
+.profile-details__name-age {
+  display: flex;
+}
+
+.profile-details__name-age--name {
+  font-weight: 700;
+  margin: 5px;
+}
+.profile-details__name-age--age {
+  margin: 5px;
+  color: var(--color-light);
+}
+
+.profile-details__location {
+  font-size: 14px;
+  color: var(--color-light);
+  margin: 5px;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin-top: auto;
+  padding: 30px 20px 25px;
+  border-top: rgba(0, 0, 0, 0.1) solid 1px;
+}
+
+.stats--number {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.stats--category {
+  font-weight: 300;
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: var(--color-light);
+}
+
+@media only screen and (max-width: 360px) {
+  .card {
+    max-height: 500px;
+  }
+
+  .background {
+    min-height: 25%;
+  }
+
+  .stats {
+    flex-direction: column;
+  }
+
+  .profile-details__name-age {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .stats__followers,
+  .stats__likes {
+    margin-bottom: 20px;
+  }
+}
